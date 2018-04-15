@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'gatsby-link';
 
 import Wrapper from './Wrapper';
 import LogoWrapper from './LogoWrapper';
@@ -10,7 +11,7 @@ function Header() {
   return (
     <Wrapper id="top">
       <LogoWrapper>
-        <a href="https://ryanfitzgerald.ca"><img src={Logo} alt="Ryan Fitzgerald"/></a>
+        <Link to="/"><img src={Logo} alt="Ryan Fitzgerald"/></Link>
       </LogoWrapper>
       <NavWrapper>
         <Nav/>

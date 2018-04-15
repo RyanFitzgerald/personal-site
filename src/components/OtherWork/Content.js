@@ -3,14 +3,14 @@ import { mainColour, borderColour } from '../../variables';
 
 const Content = styled.a`
   background: #fff;
-  border: 1px solid ${borderColour};
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   display: block;
   padding: 10px;
   text-decoration: none;
   transition: 0.25s ease all;
 
   &:hover {
-    border-color: ${mainColour};
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   }
 `;
 

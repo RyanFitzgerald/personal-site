@@ -8,6 +8,7 @@ import { backgroundAlt, headingColour, textColour, mainColour } from '../variabl
 import Hero from '../components/Hero';
 import BlogPrompt from '../components/BlogPrompt';
 import Container from '../components/Container';
+import Work from '../components/Work';
 import OtherWork from '../components/OtherWork';
 
 const WorkWrapper = styled.div`
@@ -45,23 +46,20 @@ class BlogIndex extends React.Component {
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
         <Hero/>
-        <WorkWrapper>
+        <WorkWrapper id="projects">
           <Container>
             <SectionHeader>Projects</SectionHeader>
             <SectionDescription>Browse through some of the larger projects I've worked on</SectionDescription>
             {posts.map(post => {
               if (post.node.path !== '/404/') {
-                const title = get(post, 'node.frontmatter.title') || post.node.path
                 return (
-                  <div key={post.node.frontmatter.path}>
-                    <h3>
-                      <Link to={post.node.frontmatter.path} >
-                        {post.node.frontmatter.title}
-                      </Link>
-                    </h3>
-                    <small>{post.node.frontmatter.date}</small>
-                    <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-                  </div>
+                  <Work 
+                    key={post.node.frontmatter.path}
+                    title={post.node.frontmatter.title}
+                    type={post.node.frontmatter.type}
+                    link={post.node.frontmatter.path}
+                    image={post.node.frontmatter.thumbnail.childImageSharp.responsiveSizes.src}
+                  />
                 )
               }
             })}
@@ -72,8 +70,11 @@ class BlogIndex extends React.Component {
             <SectionHeader>Other Work</SectionHeader>
             <SectionDescription>To see a complete list, visit my <a href="#">GitHub</a></SectionDescription>
             <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} link="https://chrome.google.com/webstore/detail/day-counter-new-tab-page/popaiegponeiefbiddhmaphpbdjoegff?hl=en" />
-            <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} />
-            <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} />
+            <OtherWork name="Personal Blog" description="My personal blog built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-blog" />
+            <OtherWork name="Personal Site" description="My personal site (this one!) built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-site" />
+            <OtherWork name="Vertical Timeline" description="An open-source, responsive vertical timeline generator" tags={["JavaScript", "jQuery"]} link="https://github.com/RyanFitzgerald/vertical-timeline" />
+            <OtherWork name="TagSelector" description="An open-source JS plugin to turn multiselects into selectable tag clouds" tags={["JavaScript", "SASS"]} link="https://github.com/RyanFitzgerald/tagselector" />
+            <OtherWork name="RenovAction.ca" description="Designed and developed a fully custom WordPress theme for local company" tags={["WordPress", "SASS", "JavaScript", "PHP"]} link="https://renovaction.ca/" />
           </Container>
         </OtherWrapper>
         <BlogPrompt/>
@@ -98,13 +99,18 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
-          frontmatter {
-            path
-            date(formatString: "DD MMMM, YYYY")
-          }
           frontmatter {
             title
+            path
+            type
+            date(formatString: "DD MMMM, YYYY")
+            thumbnail {
+              childImageSharp {
+                responsiveSizes(maxWidth: 600) {
+                  src
+                }
+              }
+            }
           }
         }
       }
