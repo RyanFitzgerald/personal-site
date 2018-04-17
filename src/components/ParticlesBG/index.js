@@ -9,7 +9,7 @@ function ParticlesBG(props) {
       <Particles params={{
         "particles": {
           "number": {
-            "value": 50,
+            "value": 70,
             "density": {
               "enable": true,
               "value_area": 800
@@ -57,7 +57,7 @@ function ParticlesBG(props) {
             "enable": true,
             "distance": 150,
             "color": "#000",
-            "opacity": 0.15,
+            "opacity": 0.175,
             "width": 1
           },
           "move": {
