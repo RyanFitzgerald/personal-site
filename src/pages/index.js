@@ -37,6 +37,11 @@ const SectionDescription = styled.p`
   }
 `;
 
+const OtherWorkWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
@@ -69,12 +74,14 @@ class BlogIndex extends React.Component {
           <Container>
             <SectionHeader>Other Work</SectionHeader>
             <SectionDescription>To see a complete list, visit my <a href="#">GitHub</a></SectionDescription>
-            <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} link="https://chrome.google.com/webstore/detail/day-counter-new-tab-page/popaiegponeiefbiddhmaphpbdjoegff?hl=en" />
-            <OtherWork name="Personal Blog" description="My personal blog built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-blog" />
-            <OtherWork name="Personal Site" description="My personal site (this one!) built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-site" />
-            <OtherWork name="Vertical Timeline" description="An open-source, responsive vertical timeline generator" tags={["JavaScript", "jQuery"]} link="https://github.com/RyanFitzgerald/vertical-timeline" />
-            <OtherWork name="TagSelector" description="An open-source JS plugin to turn multiselects into selectable tag clouds" tags={["JavaScript", "SASS"]} link="https://github.com/RyanFitzgerald/tagselector" />
-            <OtherWork name="RenovAction.ca" description="Designed and developed a fully custom WordPress theme for local company" tags={["WordPress", "SASS", "JavaScript", "PHP"]} link="https://renovaction.ca/" />
+            <OtherWorkWrapper>
+              <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} link="https://chrome.google.com/webstore/detail/day-counter-new-tab-page/popaiegponeiefbiddhmaphpbdjoegff?hl=en" />
+              <OtherWork name="Personal Blog" description="My personal blog built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-blog" />
+              <OtherWork name="Personal Site" description="My personal site (this one!) built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-site" />
+              <OtherWork name="Vertical Timeline" description="An open-source, responsive vertical timeline generator" tags={["JavaScript", "jQuery"]} link="https://github.com/RyanFitzgerald/vertical-timeline" />
+              <OtherWork name="TagSelector" description="An open-source JS plugin to turn multiselects into selectable tag clouds" tags={["JavaScript", "SASS"]} link="https://github.com/RyanFitzgerald/tagselector" />
+              <OtherWork name="RenovAction.ca" description="Designed and developed a fully custom WordPress theme for local company" tags={["WordPress", "SASS", "JavaScript", "PHP"]} link="https://renovaction.ca/" />
+            </OtherWorkWrapper>
           </Container>
         </OtherWrapper>
         <BlogPrompt/>

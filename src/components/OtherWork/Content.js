@@ -5,6 +5,7 @@ const Content = styled.a`
   background: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   display: block;
+  height: 100%;
   padding: 10px;
   text-decoration: none;
   transition: 0.25s ease all;
