@@ -18,7 +18,7 @@ function Hero(props) {
         <Column>
           <H1>Ryan Fitzgerald</H1>
           <P>
-            Full-stack Software Engineer from Ottawa, Canada. Currently, I'm a Full-Stack Developer at the <a href="https://www.ambyint.com/" target="_blank">Ambyint</a>.
+            Full-stack Software Engineer based in Toronto, Canada. Currently, I'm a Full-Stack Developer at <a href="https://www.ambyint.com/" target="_blank">Ambyint</a>.
           </P>
           <HeroLinks/>
         </Column>
