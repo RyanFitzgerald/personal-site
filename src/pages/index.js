@@ -73,7 +73,7 @@ class BlogIndex extends React.Component {
         <OtherWrapper>
           <Container>
             <SectionHeader>Other Work</SectionHeader>
-            <SectionDescription>To see a complete list, visit my <a href="#">GitHub</a></SectionDescription>
+            <SectionDescription>To see a complete list, visit my <a href="https://github.com/RyanFitzgerald">GitHub</a></SectionDescription>
             <OtherWorkWrapper>
               <OtherWork name="Day Counter" description="Chrome Extension to track days until or since life events" tags={["Chrome", "JavaScript"]} link="https://chrome.google.com/webstore/detail/day-counter-new-tab-page/popaiegponeiefbiddhmaphpbdjoegff?hl=en" />
               <OtherWork name="Personal Blog" description="My personal blog built in Gatsby and React" tags={["React", "GatsbyJS"]} link="https://github.com/RyanFitzgerald/personal-blog" />
